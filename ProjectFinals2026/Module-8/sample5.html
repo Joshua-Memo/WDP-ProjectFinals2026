@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+        }
+
+        .wrapper {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+        }
+
+        aside {
+            background-color: #222;
+            color: white;
+            width: 200px;
+            padding: 20px;
+        }
+
+        main {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .wrapper {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Dashboard Header</header>
+
+    <div class="wrapper">
+        <aside>
+            Sidebar Menu
+        </aside>
+
+        <main>
+            <div class="grid-container">
+                <div class="card">Item 1</div>
+                <div class="card">Item 2</div>
+                <div class="card">Item 3</div>
+                <div class="card">Item 4</div>
+                <div class="card">Item 5</div>
+                <div class="card">Item 6</div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
